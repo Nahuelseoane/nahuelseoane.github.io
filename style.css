@@ -1,0 +1,134 @@
+:root {
+    --primary-color: #000141ff;
+    --primary-font: anta;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: anta;
+    background-color: #111;
+    /* background: url(' ./dark-plaster-pattern.jpg'); */
+    /* background-size: contain; */
+
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: './dark-plaster-pattern.jpg';
+
+}
+
+header {
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-family: var(--primary-font);
+}
+
+.logo {
+    color: whitesmoke;
+    margin: 6px;
+
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    background-color: #111;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidebar a {
+    display: block;
+    color: whitesmoke;
+    padding: 16px;
+    text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+main {
+    height: 100vh;
+    background-color: dark;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    /* justify-content: space-around; */
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+.foto {
+    align-self: center;
+    /* border: midnightblue solid 8px; */
+    border-radius: 4px;
+}
+
+.foto img {
+    height: 200px;
+    border-radius: 70px;
+}
+
+.phrase {
+    /* color: black; */
+    /* align-self: flex-end; */
+    flex-direction: center;
+    font-size: 2rem;
+}
+
+.portafolio {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    justify-content: space-around;
+
+}
+
+.box {
+    background-color: aqua;
+    margin: 10px;
+    height: 10vh;
+    width: 20vw;
+
+}
