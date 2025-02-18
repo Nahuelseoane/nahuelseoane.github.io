@@ -6,6 +6,7 @@ body {
     background: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    display: flex;
 }
 
 .container {
@@ -14,17 +15,49 @@ body {
     overflow: hidden;
 }
 
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background: #222;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+#sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+#toggle-sidebar {
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    background: #00bcd4;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 /* Header */
 #header {
+    margin-left: 250px;
+    width: calc(100% - 250px);
     background: #222;
     color: white;
     padding: 20px 0;
     text-align: center;
+    transition: margin-left 0.3s;
 }
 
-#logo img {
-    border-radius: 50%;
-    border: 3px solid white;
+#header.expanded,
+#main.expanded,
+#footer.expanded {
+    margin-left: 0;
+    width: 100%;
 }
 
 /* Navigation */
@@ -51,6 +84,8 @@ nav ul li a:hover {
 section {
     padding: 50px 0;
     text-align: center;
+    margin-left: 250px;
+    transition: margin-left 0.3s;
 }
 
 #portfolio .item img {
@@ -85,4 +120,6 @@ section {
     color: white;
     text-align: center;
     padding: 20px 0;
+    margin-left: 250px;
+    transition: margin-left 0.3s;
 }
