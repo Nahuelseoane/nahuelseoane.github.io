@@ -24,6 +24,9 @@ body {
     height: 100vh;
     padding: 20px;
     transition: transform 0.3s;
+    left: 0;
+    top: 0;
+    z-index: 1000;
 }
 
 #sidebar.hidden {
@@ -33,13 +36,14 @@ body {
 #toggle-sidebar {
     position: absolute;
     top: 20px;
-    right: -40px;
+    left: 260px;
     background: #00bcd4;
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 1100;
 }
 
 /* Header */
