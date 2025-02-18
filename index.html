@@ -7,38 +7,31 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body class="is-preload">
-    <!-- Header -->
-    <div id="header">
-        <div class="top">
-            <!-- Logo -->
-            <div id="logo">
-                <span class="avatar"><img src="images/profile.jpg" alt="Nahuel Seoane" width="118" height="115" /></span>
-                <h1 id="title">Nahuel Seoane</h1>
-                <p>Desarrollador Web</p>
-                <p>Python | JavaScript | Linux | Django | Flask | SQL</p>
-            </div>
-            <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="#top" id="top-link">Perfil</a></li>
-                    <li><a href="#portfolio" id="portfolio-link">Proyectos</a></li>
-                    <li><a href="#about" id="about-link">Sobre mí</a></li>
-                    <li><a href="#contact" id="contact-link">Contacto</a></li>
-                </ul>
-            </nav>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <button id="toggle-sidebar">☰</button>
+        <div id="logo">
+            <span class="avatar"><img src="images/profile.jpg" alt="Nahuel Seoane" width="118" height="115" /></span>
+            <h1 id="title">Nahuel Seoane</h1>
+            <p>Desarrollador Web</p>
+            <p>Python | JavaScript | Linux | Django | Flask | SQL</p>
         </div>
-        <div class="bottom">
-            <!-- Social Icons -->
-            <ul class="icons">
-                <li><a href="mailto:nahuelseoane@gmail.com" class="icon solid fa-envelope"> Email</a></li>
-                <li><a href="https://www.linkedin.com/in/nahuel-seoane" target="_blank" class="icon brands fa-linkedin"> LinkedIn</a></li>
-                <li><a href="https://github.com/NahuelSeoane" target="_blank" class="icon brands fa-github"> GitHub</a></li>
+        <nav id="nav">
+            <ul>
+                <li><a href="#top" id="top-link">Perfil</a></li>
+                <li><a href="#portfolio" id="portfolio-link">Proyectos</a></li>
+                <li><a href="#about" id="about-link">Sobre mí</a></li>
+                <li><a href="#contact" id="contact-link">Contacto</a></li>
             </ul>
-        </div>
+        </nav>
+        <ul class="icons">
+            <li><a href="mailto:nahuelseoane@gmail.com" class="icon solid fa-envelope"> Email</a></li>
+            <li><a href="https://www.linkedin.com/in/nahuel-seoane" target="_blank" class="icon brands fa-linkedin"> LinkedIn</a></li>
+            <li><a href="https://github.com/NahuelSeoane" target="_blank" class="icon brands fa-github"> GitHub</a></li>
+        </ul>
     </div>
-    <!-- Main -->
+    <!-- Main Content -->
     <div id="main">
-        <!-- Intro -->
         <section id="top" class="one dark cover">
             <div class="container">
                 <header>
@@ -48,7 +41,6 @@
                 </header>
             </div>
         </section>
-        <!-- Portfolio -->
         <section id="portfolio" class="two">
             <div class="container">
                 <header>
@@ -75,7 +67,6 @@
                 </div>
             </div>
         </section>
-        <!-- About Me -->
         <section id="about" class="three">
             <div class="container">
                 <header>
@@ -84,7 +75,6 @@
                 <p>Soy un desarrollador web con conocimientos en backend con Python (Django, Flask, FastAPI), desarrollo frontend con JavaScript, y manejo de bases de datos SQL y NoSQL. Me interesa la automatización, optimización de procesos y el desarrollo de APIs escalables.</p>
             </div>
         </section>
-        <!-- Contact -->
         <section id="contact" class="four">
             <div class="container">
                 <header>
