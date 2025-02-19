@@ -62,23 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleSidebar.addEventListener("click", function () {
         sidebar.classList.toggle("hidden");
-        document.getElementById("header").classList.toggle("expanded");
-        document.getElementById("main").classList.toggle("expanded");
-    });
-
-    // Ensure footer stays at bottom
-    function adjustFooter() {
-        const mainContent = document.getElementById("main");
-        const footer = document.getElementById("footer");
-        if (window.innerHeight > mainContent.clientHeight + footer.clientHeight) {
-            footer.style.position = "absolute";
-            footer.style.bottom = "0";
-            footer.style.width = "100%";
+        if (sidebar.classList.contains("hidden")) {
+            document.getElementById("header").style.marginLeft = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            toggleSidebar.style.position = "fixed";
+            toggleSidebar.style.left = "20px";
+            toggleSidebar.style.top = "20px";
         } else {
-            footer.style.position = "relative";
+            document.getElementById("header").style.marginLeft = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            toggleSidebar.style.position = "absolute";
+            toggleSidebar.style.left = "260px";
         }
-    }
-
-    adjustFooter();
-    window.addEventListener("resize", adjustFooter);
+    });
 });

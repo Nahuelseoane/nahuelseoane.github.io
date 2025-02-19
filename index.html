@@ -8,122 +8,97 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
-<body class="is-preload">
-    <!-- Header -->
-    <div id="header">
-        <div class="top">
-            <!-- Logo -->
-            <div id="logo">
-                <span class="avatar"><img src="images/profile.jpg" alt="Nahuel Seoane" width="118"
-                        height="115" /></span>
-                <h1 id="title">Nahuel Seoane</h1>
-                <p>Desarrollador Web</p>
-                <p>Python | JavaScript | Linux | Django | Flask | SQL</p>
-            </div>
-            <!-- Nav -->
-            <nav id="nav">
-                <ul>
-                    <li><a href="#top" id="top-link">Perfil</a></li>
-                    <li><a href="#portfolio" id="portfolio-link">Proyectos</a></li>
-                    <li><a href="#about" id="about-link">Sobre mí</a></li>
-                    <li><a href="#contact" id="contact-link">Contacto</a></li>
-                </ul>
-            </nav>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <button id="toggle-sidebar">☰</button>
+        <div id="logo">
+            <img src="images/profile.jpg" alt="Nahuel Seoane" class="profile-picture" />
+            <h1>Nahuel Seoane</h1>
+            <p>Desarrollador Web</p>
+            <p>Python | JavaScript | Linux | Django | Flask | SQL</p>
         </div>
-        <div class="bottom">
-            <!-- Social Icons -->
-            <ul class="icons">
-                <li><a href="mailto:nahuelseoane@gmail.com" class="icon solid fa-envelope"> Email</a></li>
-                <li><a href="https://www.linkedin.com/in/nahuel-seoane" target="_blank" class="icon brands fa-linkedin">
-                        LinkedIn</a></li>
-                <li><a href="https://github.com/NahuelSeoane" target="_blank" class="icon brands fa-github"> GitHub</a>
-                </li>
+        <nav>
+            <ul>
+                <li><a href="#top">Perfil</a></li>
+                <li><a href="#portfolio">Proyectos</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#contact">Contacto</a></li>
             </ul>
-        </div>
+        </nav>
+        <ul class="icons">
+            <li><a href="mailto:nahuelseoane@gmail.com">Email</a></li>
+            <li><a href="https://www.linkedin.com/in/nahuel-seoane" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/NahuelSeoane" target="_blank">GitHub</a></li>
+        </ul>
     </div>
-    <!-- Main -->
+
+    <!-- Main Content -->
     <div id="main">
-        <!-- Intro -->
-        <section id="top" class="one dark cover">
+        <section id="top">
             <div class="container">
                 <header>
-                    <h2 class="alt">Hola! Soy <strong>Nahuel Seoane</strong>, bienvenido a mi portafolio.</h2>
+                    <h2>Hola! Soy <strong>Nahuel Seoane</strong>, bienvenido a mi portafolio.</h2>
                     <p>Web Developer con experiencia en backend con Python (Django, Flask) y frontend en JavaScript
-                        (HTML, CSS). Apasionado por la tecnología y el desarrollo Full Stack.</p>
+                        (HTML, CSS).</p>
                     <a href="images/CV_Nahuel_Seoane.pdf" target="_blank" class="button">Descargar CV</a>
                 </header>
             </div>
         </section>
-        <!-- Portfolio -->
-        <section id="portfolio" class="two">
+
+        <section id="portfolio">
             <div class="container">
                 <header>
                     <h2>Proyectos</h2>
                 </header>
-                <p>Aquí puedes ver algunos de mis proyectos de desarrollo web y automatización con Python.</p>
-                <div class="row">
-                    <div class="col-4 col-12-mobile">
-                        <article class="item">
-                            <a href="https://github.com/NahuelSeoane/proyecto1" target="_blank" class="image fit"><img
-                                    src="images/proyecto1.png" alt="Proyecto 1" /></a>
-                            <header>
-                                <h3>Proyecto 1 - Aplicación Web con Django</h3>
-                            </header>
-                        </article>
+                <p>Algunos de mis proyectos de desarrollo web y automatización con Python.</p>
+                <div class="project-list">
+                    <div class="project">
+                        <a href="https://github.com/NahuelSeoane/proyecto1" target="_blank">
+                            <img src="images/proyecto1.png" alt="Proyecto 1" />
+                            <h3>Aplicación Web con Django</h3>
+                        </a>
                     </div>
-                    <div class="col-4 col-12-mobile">
-                        <article class="item">
-                            <a href="https://github.com/NahuelSeoane/proyecto2" target="_blank" class="image fit"><img
-                                    src="images/proyecto2.png" alt="Proyecto 2" /></a>
-                            <header>
-                                <h3>Proyecto 2 - API con Flask</h3>
-                            </header>
-                        </article>
+                    <div class="project">
+                        <a href="https://github.com/NahuelSeoane/proyecto2" target="_blank">
+                            <img src="images/proyecto2.png" alt="Proyecto 2" />
+                            <h3>API con Flask</h3>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- About Me -->
-        <section id="about" class="three">
+
+        <section id="about">
             <div class="container">
                 <header>
                     <h2>Sobre mí</h2>
                 </header>
                 <p>Soy un desarrollador web con conocimientos en backend con Python (Django, Flask, FastAPI), desarrollo
-                    frontend con JavaScript, y manejo de bases de datos SQL y NoSQL. Me interesa la automatización,
-                    optimización de procesos y el desarrollo de APIs escalables.</p>
+                    frontend con JavaScript, y bases de datos SQL y NoSQL.</p>
             </div>
         </section>
-        <!-- Contact -->
-        <section id="contact" class="four">
+
+        <section id="contact">
             <div class="container">
                 <header>
                     <h2>Contacto</h2>
                 </header>
-                <p>Gracias por visitar mi portafolio. Contáctame para oportunidades laborales o colaboraciones.</p>
                 <form action="https://formspree.io/mwkrezaa" method="POST">
-                    <div class="row">
-                        <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Su nombre" /></div>
-                        <div class="col-6 col-12-mobile"><input type="email" name="_replyto" placeholder="Su email" />
-                        </div>
-                        <div class="col-12">
-                            <textarea name="mensaje" placeholder="Mensaje"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <input type="submit" value="Enviar mensaje">
-                        </div>
-                    </div>
+                    <input type="text" name="name" placeholder="Su nombre" required />
+                    <input type="email" name="_replyto" placeholder="Su email" required />
+                    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                    <input type="submit" value="Enviar mensaje" />
                 </form>
             </div>
         </section>
     </div>
+
     <!-- Footer -->
     <div id="footer">
-        <ul class="copyright">
-            <li>Email: nahuelseoane@gmail.com</li>
-            <li>Teléfono: +54 11 3398 3542</li>
-        </ul>
+        <p>Email: nahuelseoane@gmail.com | Teléfono: +54 11 3398 3542</p>
     </div>
+
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
