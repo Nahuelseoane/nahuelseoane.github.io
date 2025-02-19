@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Dark mode toggle
     const toggleButton = document.createElement("button");
     toggleButton.textContent = "Dark Mode";
+    toggleButton.id = "dark-mode-toggle";
     toggleButton.style.position = "fixed";
     toggleButton.style.top = "20px";
     toggleButton.style.right = "20px";
@@ -57,14 +58,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Sidebar toggle
     const sidebar = document.getElementById("sidebar");
-    const toggleSidebar = document.createElement("button");
-    toggleSidebar.textContent = "☰";
-    toggleSidebar.id = "toggle-sidebar";
-    sidebar.appendChild(toggleSidebar);
+    const toggleSidebar = document.getElementById("toggle-sidebar");
 
     toggleSidebar.addEventListener("click", function () {
         sidebar.classList.toggle("hidden");
         document.getElementById("header").classList.toggle("expanded");
         document.getElementById("main").classList.toggle("expanded");
     });
+
+    // Ensure footer stays at bottom
+    function adjustFooter() {
+        const mainContent = document.getElementById("main");
+        const footer = document.getElementById("footer");
+        if (window.innerHeight > mainContent.clientHeight + footer.clientHeight) {
+            footer.style.position = "absolute";
+            footer.style.bottom = "0";
+            footer.style.width = "100%";
+        } else {
+            footer.style.position = "relative";
+        }
+    }
+
+    adjustFooter();
+    window.addEventListener("resize", adjustFooter);
 });
