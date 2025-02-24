@@ -54,6 +54,10 @@ body {
     background: #008ba3;
 }
 
+.icons {
+    list-style: none;
+}
+
 /* Profile Picture */
 .profile-picture {
     display: block;
