@@ -147,6 +147,39 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* form input[type="submit"] {
+    background: #00bcd4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background: #008ba3;
+} */
+
 /* Buttons */
 .button {
     display: inline-block;

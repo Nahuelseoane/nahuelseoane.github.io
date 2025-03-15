@@ -33,14 +33,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.createElement("button");
     toggleButton.textContent = "Dark Mode";
     toggleButton.id = "dark-mode-toggle";
+    toggleButton.classList.add("button")
     toggleButton.style.position = "fixed";
     toggleButton.style.top = "20px";
     toggleButton.style.right = "20px";
-    toggleButton.style.padding = "10px";
-    toggleButton.style.background = "#00bcd4";
-    toggleButton.style.color = "white";
-    toggleButton.style.border = "none";
-    toggleButton.style.cursor = "pointer";
+    // toggleButton.style.padding = "10px";
+    // toggleButton.style.background = "#00bcd4";
+    // toggleButton.style.color = "white";
+    // toggleButton.style.border = "none";
+    // toggleButton.style.cursor = "pointer";
     document.body.appendChild(toggleButton);
 
     toggleButton.addEventListener("click", function () {
