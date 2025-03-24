@@ -204,3 +204,29 @@ form input[type="submit"]:hover {
     width: 100%;
     margin-top: auto;
 }
+
+@media screen and (max-width:768px) {
+    #sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 1000;
+    }
+
+    #sidebar.hidden {
+        transform: translateX(-100%);
+    }
+
+
+    #main,
+    #header,
+    #footer {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    #toogle-sidebar {
+        left: 10px;
+        top: 10px;
+        z-index: 1100;
+    }
+}
