@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="assets/js/"> -->
     <title>Document</title>
 </head>
 
@@ -18,7 +19,10 @@
         <hr>
 
         <h3>💻 Step 1: Downloading the Excel File from Banco Provincia</h3>
-        <img src="./assets/gifs/transfers_download.gif" alt="Bank download GIF" style="max-width: 60%; height: auto;">
+        <img id="gif1" src="./assets/gifs/transfers_download.gif" alt="Bank download GIF"
+            style="max-width: 60%; height: auto;">
+        <br>
+        <button onclick="replayGif('gif1')">🔃 Replay</button>
         <p>The script uses Selenium to log into the bank and download the latest Excel with all transactions.</p>
 
         <hr>
@@ -31,7 +35,10 @@
         <hr>
 
         <h3>🌐 Step 3: Loading Payments into Sytech</h3>
-        <img src="assets/gifs/sytech_upload.gif" alt="Sytech automation GIF" style="max-width: 60%; height: auto;">
+        <img id="gif3" src="assets/gifs/sytech_upload.gif" alt="Sytech automation GIF"
+            style="max-width: 60%; height: auto;">
+        <br>
+        <button onclick="replayGif('gif3')">🔃 Replay</button>
         <p>The script searches for each client and automatically registers the payment with the right method.</p>
     </section>
     <a href="https://github.com/Nahuelseoane/AutoDiscoEmails" target="_blank">
@@ -39,7 +46,7 @@
     </a>
     <a href="index.html">Back</a>
 
-
+    <script src="assets/js/discobolo.js"></script>
 </body>
 
 </html>
