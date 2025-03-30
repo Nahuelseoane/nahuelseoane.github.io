@@ -63,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     toggleSidebar.addEventListener("click", function () {
         sidebar.classList.toggle("hidden");
+        main.classList.toggle("expanded");
+        header.classList.toggle("expanded");
         if (sidebar.classList.contains("hidden")) {
             document.getElementById("header").style.marginLeft = "0";
             document.getElementById("main").style.marginLeft = "0";
