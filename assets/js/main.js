@@ -37,11 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButton.style.position = "fixed";
     toggleButton.style.top = "20px";
     toggleButton.style.right = "20px";
-    // toggleButton.style.padding = "10px";
-    // toggleButton.style.background = "#00bcd4";
-    // toggleButton.style.color = "white";
-    // toggleButton.style.border = "none";
-    // toggleButton.style.cursor = "pointer";
     document.body.appendChild(toggleButton);
 
     toggleButton.addEventListener("click", function () {
@@ -60,22 +55,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // Sidebar toggle
     const sidebar = document.getElementById("sidebar");
     const toggleSidebar = document.getElementById("toggle-sidebar");
+    const main = document.getElementById("main");
 
-    toggleSidebar.addEventListener("click", function () {
-        sidebar.classList.toggle("hidden");
-        main.classList.toggle("expanded");
-        header.classList.toggle("expanded");
-        if (sidebar.classList.contains("hidden")) {
-            document.getElementById("header").style.marginLeft = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            toggleSidebar.style.position = "fixed";
-            toggleSidebar.style.left = "20px";
-            toggleSidebar.style.top = "20px";
+    toggleSidebar.addEventListener("click", () => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        if (isMobile) {
+            //overlay drawer
+            sidebar.classList.toggle("open");
+            document.body.classList.toggle("menu-open", sidebar.classList.contains("open"));
         } else {
-            document.getElementById("header").style.marginLeft = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            toggleSidebar.style.position = "absolute";
-            toggleSidebar.style.left = "260px";
+            // desktop push
+            sidebar.classList.toggle("hidden");
+            main.classList.toggle("expanded");
+            document.body.classList.toggle("sidebar-closed", sidebar.classList.contains("hidden"));
         }
     });
 });

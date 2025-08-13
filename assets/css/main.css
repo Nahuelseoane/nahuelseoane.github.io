@@ -40,10 +40,12 @@ h5 {
     z-index: 1000;
 }
 
+/* Desktop: hide when toggled */
 #sidebar.hidden {
     transform: translateX(-100%);
 }
 
+/* Toggle button */
 #toggle-sidebar {
     position: fixed;
     top: 20px;
@@ -101,23 +103,6 @@ h5 {
     border: 4px solid #00bcd4;
 }
 
-/* Header */
-#header {
-    margin-left: 250px;
-    width: calc(100% - 250px);
-    background: #222;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    transition: margin-left 0.3s;
-}
-
-#header.expanded,
-#main.expanded {
-    margin-left: 0;
-    width: 100%;
-}
-
 /* Navigation */
 nav ul {
     list-style: none;
@@ -139,11 +124,25 @@ nav ul li a:hover {
 }
 
 /* Sections */
+/* desktop default: content pushed by sidebar */
 #main {
     flex: 1;
     margin-left: 250px;
     transition: margin-left 0.3s;
 }
+
+/* when sidebar is hidden on desktop */
+#main.expanded {
+    margin-left: 0;
+    width: 100%;
+}
+
+/* when collapsed */
+/* body.sidebar-closed #toggle-sidebar {
+    left: 16px;
+} */
+
+
 
 #portfolio img {
     width: 50%;
@@ -182,19 +181,12 @@ form input[type="submit"] {
     box-sizing: border-box;
 }
 
-/* form input[type="submit"] {
-    background: #00bcd4;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+/* Buttons */
+.pdfs {
+    width: 100%;
+    height: 700px;
 }
 
-form input[type="submit"]:hover {
-    background: #008ba3;
-} */
-
-/* Buttons */
 .button {
     display: inline-block;
     background: #00bcd4;
@@ -220,27 +212,40 @@ form input[type="submit"]:hover {
 }
 
 @media screen and (max-width:768px) {
+
+    /* #main {
+        margin-left: 0 !important;
+        width: 100% !important;
+    } */
+
     #sidebar {
         transform: translateX(-100%);
-        position: fixed;
-        z-index: 1000;
+        overflow: visible;
+        /* position: fixed; */
+        /* z-index: 1000; */
+    }
+
+    #sidebar.open {
+        transform: translateX(0);
     }
 
     #sidebar.hidden {
         transform: translateX(-100%);
     }
 
-
     #main,
-    #header,
     #footer {
         margin-left: 0 !important;
         width: 100% !important;
     }
 
-    #toogle-sidebar {
-        left: 10px;
+    #toggle-sidebar {
+        width: 56px;
+        right: -12px;
+        /* left: 100px; */
         top: 10px;
         z-index: 1100;
     }
+
+
 }
