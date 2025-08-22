@@ -1,14 +1,64 @@
+:root {
+    /* Colors */
+    --bg: #f4f4f4 --text: #333;
+    --sidebar-bg: #222;
+    --brand: #00bcd4;
+    --brand-strong: #008b43;
+
+    /* Layout */
+    --sidebar-w: 250px;
+
+    /* Spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+
+    /* Typography */
+    --fs-base: clamp(16px, 0.9vw + 12px, 18px);
+    --fs-sm: 0.95rem;
+    --fs-md: 1.05rem;
+    --fs-lg: clamp(1.15rem, 1rem + 0.5vw, 1.35rem);
+    --fs-h3: clamp(1.3rem, 1.05rem + 1vw, 1.6rem);
+    --fs-h2: clamp(1.6rem, 1.2rem + 1.5vw, 2.1rem);
+    --fs-h1: clamp(2rem, 1.4rem + 2.2vw, 2.8rem);
+
+    /* Components */
+    --toggle-size: 44px;
+    --radius: 8px;
+}
+
+
 /* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: var(--fs-base);
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+nav ul li a {
+    font-size: var(--fs-md)
 }
 
 h1,
@@ -17,7 +67,7 @@ h3,
 h4,
 h5 {
     font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 .container {
@@ -28,13 +78,14 @@ h5 {
 
 /* Sidebar */
 #sidebar {
-    width: 250px;
-    background: #222;
+    width: var(--sidebar-w);
+    background: var(--sidebar-bg);
     color: white;
     position: fixed;
     height: 100vh;
     padding: 20px;
     transition: transform 0.3s ease-in-out;
+    /* overflow-y: auto; */
     left: 0;
     top: 0;
     z-index: 1000;
@@ -43,6 +94,16 @@ h5 {
 /* Desktop: hide when toggled */
 #sidebar.hidden {
     transform: translateX(-100%);
+}
+
+.button,
+#toggle-sidebar {
+    background: var(--brand);
+}
+
+.button:hover,
+#toggle-sidebar:hover {
+    background: var(--brand-strong);
 }
 
 /* Toggle button */
@@ -212,6 +273,9 @@ form input[type="submit"] {
 }
 
 @media screen and (max-width:768px) {
+    :root {
+        --fs-base: clamp(17px, 1vw + 14px, 19px);
+    }
 
     /* #main {
         margin-left: 0 !important;
@@ -219,6 +283,7 @@ form input[type="submit"] {
     } */
 
     #sidebar {
+        height: 100vh;
         transform: translateX(-100%);
         overflow: visible;
         /* position: fixed; */
@@ -241,11 +306,12 @@ form input[type="submit"] {
 
     #toggle-sidebar {
         width: 56px;
+        height: 56px;
+        font-size: 26px;
+        border-radius: 12px;
         right: -12px;
         /* left: 100px; */
         top: 10px;
         z-index: 1100;
     }
-
-
 }

@@ -1,63 +1,50 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll("nav ul li a");
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadSidebar();
+    await loadFooter();
+    initSidebarToggle();
+    initSmoothScroll?.();
+    initPortfolioHover?.();
+    initDarkMode?.();
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
+    document.dispatchEvent(new Event('sidebar:ready'));
+    document.dispatchEvent(new Event('footer:ready'));
+});
 
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 50,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
+async function loadSidebar() {
+    const ph = document.getElementById('sidebar-placeholder');
+    if (!ph) return;
+    const src = ph.dataset.src || 'sidebar.html';
+    try {
+        const res = await fetch(src);
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        // replace the placeholder with the sidebar html
+        ph.outerHTML = await res.text();
+    } catch (e) {
+        console.error('Sidebar include failed:', e)
+    }
+}
+async function loadFooter() {
+    const ph = document.getElementById('footer-placeholder');
+    if (!ph) return;
+    const src = ph.dataset.src || 'footer.html';
+    const res = await fetch(src);
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    ph.outerHTML = await res.text();
+}
 
-    // Animation for portfolio images
-    const portfolioItems = document.querySelectorAll("#portfolio .item img");
+function initSidebarToggle() {
+    // Sidebar
+    const sidebar = document.getElementById("sidebar");
+    const toggle = document.getElementById("toggle-sidebar");
+    const main = document.getElementById("main");
+    if (!sidebar || !toggle || !main) return;
 
-    portfolioItems.forEach(item => {
-        item.addEventListener("mouseover", function () {
-            this.style.transform = "scale(1.05)";
-        });
-        item.addEventListener("mouseout", function () {
-            this.style.transform = "scale(1)";
-        });
-    });
-
-    // Dark mode toggle
-    const toggleButton = document.createElement("button");
-    toggleButton.textContent = "Dark Mode";
-    toggleButton.id = "dark-mode-toggle";
-    toggleButton.classList.add("button")
-    toggleButton.style.position = "fixed";
-    toggleButton.style.top = "20px";
-    toggleButton.style.right = "20px";
-    document.body.appendChild(toggleButton);
-
-    toggleButton.addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-        if (document.body.classList.contains("dark-mode")) {
-            document.body.style.background = "#222";
-            document.body.style.color = "white";
-            toggleButton.textContent = "Light Mode";
-        } else {
-            document.body.style.background = "#f4f4f4";
-            document.body.style.color = "#333";
-            toggleButton.textContent = "Dark Mode";
-        }
-    });
+    // avoid double-binding if this runs twice
+    if (toggle.dataset.bound === '1') return;
+    toggle.dataset.bound = '1';
 
     // Sidebar toggle
-    const sidebar = document.getElementById("sidebar");
-    const toggleSidebar = document.getElementById("toggle-sidebar");
-    const main = document.getElementById("main");
-
-    toggleSidebar.addEventListener("click", () => {
+    toggle.addEventListener("click", () => {
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
         if (isMobile) {
@@ -71,4 +58,53 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.toggle("sidebar-closed", sidebar.classList.contains("hidden"));
         }
     });
-});
+};
+
+function initSmoothScroll() {
+    document.addEventListener('click', (e) => {
+        const a = e.target.closest('nav a[href^="#"]');
+        if (!a) return;
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target) {
+            window.scrollTo({ top: target.offsetTop - 50, behavior: 'smooth' });
+        }
+    });
+}
+
+function initPortfolioHover() {
+    const imgs = document.querySelectorAll('#portfolio .item img');
+    imgs.forEach(img => {
+        img.addEventListener('mouseover', () => (img.style.transform = 'scale(1.05)'));
+        img.addEventListener('mouseout', () => (img.style.transform = 'scale(1)'));
+    });
+}
+
+// ========== DARK MODE ==========
+function initDarkMode() {
+    let btn = document.getElementById('dark-mode-toggle');
+    if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'dark-mode-toggle';
+        btn.textContent = 'Dark Mode';
+        btn.classList.add('button');
+        btn.style.position = 'fixed';
+        btn.style.top = '20px';
+        btn.style.right = '20px';
+        document.body.appendChild(btn);
+    }
+    btn.addEventListener('click', () => {
+        const on = document.body.classList.toggle('dark-mode');
+        // btn.textContent = on ? 'Light Mode' : 'Dark Mode';
+        if (document.body.classList.contains("dark-mode")) {
+            document.body.style.background = "#222";
+            document.body.style.color = "white";
+            toggleButton.textContent = "Light Mode";
+        } else {
+            document.body.style.background = "#f4f4f4";
+            document.body.style.color = "#333";
+            toggleButton.textContent = "Dark Mode";
+        }
+    });
+}
