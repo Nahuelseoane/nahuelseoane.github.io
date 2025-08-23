@@ -74,12 +74,23 @@ h5 {
     width: 80%;
     margin: auto;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 
 /* Sidebar */
 #sidebar {
     width: var(--sidebar-w);
     background: var(--sidebar-bg);
+    background-image:
+        radial-gradient(1200px 600px at -200px -100px, rgba(255, 255, 255, .06), transparent 60%),
+        radial-gradient(800px 400px at 120% 120%, rgba(0, 0, 0, .35), transparent 60%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, .03) 0 2px, rgba(255, 255, 255, 0) 2px 4px);
+    background-blend-mode: overlay, multiply, normal;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+
+    text-shadow: none;
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, .06);
     color: white;
     position: fixed;
     height: 100vh;
@@ -89,6 +100,16 @@ h5 {
     left: 0;
     top: 0;
     z-index: 1000;
+}
+
+#sidebar h2,
+h3 {
+    margin: 0;
+}
+
+body.dark-mode #sidebar {
+    border-right: 1px solid rgba(255, 255, 255, .12);
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, .12);
 }
 
 /* Desktop: hide when toggled */
@@ -128,6 +149,7 @@ h5 {
 
 .index {
     padding: 0px;
+    margin-top: 50px;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -185,7 +207,10 @@ nav ul li a:hover {
 }
 
 /* Sections */
-/* desktop default: content pushed by sidebar */
+section {
+    margin-bottom: 150px;
+}
+
 #main {
     flex: 1;
     margin-left: 250px;

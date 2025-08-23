@@ -26,13 +26,15 @@
 
     <div id="main">
         <section id="discobolo-details">
+            <div class="container">
+                <h1>🌀 Automating Discóbolo – Full Walkthrough</h1>
+                <p>Automates downloading bank transactions, updating master Excel files, and loading them into a web
+                    system.
+                </p>
+            </div>
 
-            <h2>🌀 Automating Discóbolo – Full Walkthrough</h2>
-            <p>Automates downloading bank transactions, updating master Excel files, and loading them into a web system.
-            </p>
 
-            <hr>
-            <li>
+            <div class="container">
                 <h3>💻 Step 1: Downloading the Excel File from Banco Provincia</h3>
                 <img id="gif1" src="../assets/gifs/transfers_download.gif" alt="Bank download GIF"
                     style="max-width: 60%; height: auto;">
@@ -40,17 +42,21 @@
                 <button class="btn" onclick="replayGif('gif1')">🔃 Replay</button>
                 <p>The script uses Selenium to log into the bank and download the latest Excel with all transactions.
                 </p>
-            </li>
-            <hr>
-            <li>
+            </div>
+
+
+            <div class="container">
                 <h3>📊 Step 2: Updating the Master Excel</h3>
-                <img src="../assets/gifs/excel-update.gif" alt="Excel update GIF"
+                <img src="../assets/gifs/transfers_update.gif" alt="Excel update GIF"
                     style="max-width: 100%; height: auto;">
-                <p>It compares <code>N° Secuencia</code> values to avoid duplicates and inserts new rows with formatting
+                <br>
+                <button class="btn" onclick="replayGif('gif2')">🔃 Replay</button>
+                <p>It compares "<code>N° Secuencia</code>" values to avoid duplicates and inserts new rows with
+                    formatting
                     preserved.</p>
-            </li>
-            <hr>
-            <li>
+            </div>
+
+            <div class="container">
                 <h3>🌐 Step 3: Loading Payments into Sytech</h3>
                 <img id="gif3" src="../assets/gifs/sytech_upload.gif" alt="Sytech automation GIF"
                     style="max-width: 60%; height: auto;">
@@ -58,19 +64,22 @@
                 <button class="btn" onclick="replayGif('gif3')">🔃 Replay</button>
                 <p>The script searches for each client and automatically registers the payment with the right method.
                 </p>
-            </li>
-            <li>
+            </div>
+            <div class="container">
                 <h3>📨 Step 4: Sending emails with receipt</h3>
                 <img id="gif4" src="../assets/gifs/emails.gif" alt="Emails sending GIF"
                     style="max-width: 60%; height: auto;">
                 <br>
                 <button class="btn" onclick="replayGif('gif4')">🔃 Replay</button>
                 <p>It sends an email to all users with the payment's receipt attached to it</p>
-            </li>
+            </div>
         </section>
-        <a href="https://github.com/Nahuelseoane/AutoDiscoEmails" target="_blank">
-            👉 [View GitHub Repo]
-        </a>
+
+        <div class="container">
+            <a href="https://github.com/Nahuelseoane/AutoDiscoEmails" target="_blank">
+                👉 [View GitHub Repo]
+            </a>
+        </div>
         <br>
     </div>
 

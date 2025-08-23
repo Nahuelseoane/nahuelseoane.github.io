@@ -1,11 +1,6 @@
 /* Only affect this page */
-body.page-discobolo {
-
-    /* (Optional) bump body text a bit on this page only */
-    /* Uncomment if you want a larger base size here:
-  font-size: 1.125rem;  /* ~18px */
-    */
-}
+/* body.page-discobolo {
+} */
 
 /* Images: affect content images only; don't touch sidebar/avatar/icons */
 body.page-discobolo #main img:not(.profile-picture):not(.social-icon) {
@@ -15,7 +10,6 @@ body.page-discobolo #main img:not(.profile-picture):not(.social-icon) {
     border-radius: 10px;
     display: block;
     margin: 0 auto;
-    /* center nicely */
 }
 
 /* Mobile: full width is nicer on phones */
