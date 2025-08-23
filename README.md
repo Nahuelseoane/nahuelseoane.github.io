@@ -57,7 +57,7 @@ Add screenshots of the site here if desired.
 
 Clone this repository:
 
-git clone https://github.com/NahuelSeoane/nahuelseoane.github.io
+git clone https://github.com/soyjnahuel/soyjnahuel.github.io
 
 Open index.html in your browser.
 
